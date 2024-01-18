@@ -4,6 +4,7 @@ import MainLayout from "./layout/MainLayout";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Reviews from "./pages/Reviews";
+import Checkout from "./pages/Checkout";
 
 function App() {
 	return (
@@ -14,6 +15,7 @@ function App() {
 					<Route path='/home' element={<Home />}></Route>
 					<Route path='/products' element={<Products />}></Route>
 					<Route path='/reviews' element={<Reviews />}></Route>
+					<Route path='/checkout' element={<Checkout />}></Route>
 				</Routes>
 			</MainLayout>
 		</BrowserRouter>

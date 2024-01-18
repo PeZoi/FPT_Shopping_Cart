@@ -5,7 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const pages = ["home", "products", "reviews"];
 
@@ -49,7 +49,7 @@ function Header() {
 								<NavLink
 									to={`/${page}`}
 									key={page}
-									activeClassName='active'
+									activeclassname='active'
 								>
 									<MenuItem>
 										<Typography textAlign='center' fontWeight='bold'>
@@ -61,9 +61,15 @@ function Header() {
 						</div>
 					</div>
 
-					<Badge color='error' badgeContent={5} className='cursor-pointer'>
-						<ShoppingCartIcon />
-					</Badge>
+					<Link to={"/checkout"}>
+						<Badge
+							color='error'
+							badgeContent={5}
+							className='cursor-pointer'
+						>
+							<ShoppingCartIcon />
+						</Badge>
+					</Link>
 				</div>
 			</Container>
 		</AppBar>
