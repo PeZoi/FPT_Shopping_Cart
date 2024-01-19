@@ -6,10 +6,12 @@ import AdbIcon from "@mui/icons-material/Adb";
 import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link, NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const pages = ["home", "products", "reviews"];
 
 function Header() {
+	const { size } = useSelector((state) => state.cartData);
 	return (
 		<AppBar
 			position='static'
@@ -64,7 +66,7 @@ function Header() {
 					<Link to={"/checkout"}>
 						<Badge
 							color='error'
-							badgeContent={5}
+							badgeContent={size}
 							className='cursor-pointer'
 						>
 							<ShoppingCartIcon />

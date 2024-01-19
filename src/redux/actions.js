@@ -13,3 +13,15 @@ export const setStatusProductsListAction = (data) => {
 export const selectedProductAction = (data) => {
 	return { type: "SELECT_PRODUCT", payload: data };
 };
+
+export const addToCartAction = (data) => {
+	return { type: "ADD_TO_CART", payload: data };
+};
+
+export const changeQuantityAction = (data) => {
+	return { type: "CHANGE_QUANTITY", payload: data };
+};
+
+export const removeToCartAction = (data) => {
+	return { type: "REMOVE_TO_CART", payload: data };
+};

@@ -2,20 +2,20 @@
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 
-export default function QuantityInput({ quantity, setQuantity }) {
-	const handleIncreaseQuantity = () => {
-		setQuantity((quantity) => quantity + 1);
-	};
-	const handleDecreaseQuantity = () => {
-		setQuantity((quantity) => quantity - 1);
-	};
+export default function QuantityInput({
+	quantity,
+	handleIncreaseQuantity,
+	handleDecreaseQuantity,
+}) {
 	return (
 		<div className='relative flex items-center max-w-[8rem]'>
 			<button
 				type='button'
 				id='decrement-button'
 				data-input-counter-decrement='quantity-input'
-				className='bg-primary rounded-lg p-1 hover:opacity-80 flex items-center justify-center'
+				className={`bg-primary rounded-lg p-1 flex items-center justify-center ${
+					quantity === 1 ? "opacity-40 hover:" : "hover:opacity-80"
+				}`}
 				onClick={handleDecreaseQuantity}
 			>
 				<RemoveIcon fontSize='small' style={{ color: "white" }} />

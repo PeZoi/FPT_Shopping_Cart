@@ -7,7 +7,7 @@ const initProductState = {
 			productName: "",
 			description: "",
 			imageUrl: "",
-			price: "",
+			price: 0,
 		},
 	],
 	selectProduct: {},
