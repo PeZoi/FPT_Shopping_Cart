@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import Header from "./components/header";
+import Header from "./components/Header";
 
 const MainLayout = (props) => {
 	return (
