@@ -29,32 +29,30 @@ function Header() {
 			<Container maxWidth='xl'>
 				<div className='flex items-center justify-between'>
 					<div className='flex justify-center items-center'>
-						<Link to={"/"} className='flex justify-center items-center'>
-							<AdbIcon
-								sx={{
-									display: { xs: "none", md: "flex" },
-									mr: 1,
-									color: "#32a6db",
-								}}
-							/>
-							<Typography
-								variant='h6'
-								noWrap
-								component='a'
-								href='#app-bar-with-responsive-menu'
-								sx={{
-									mr: 2,
-									display: { xs: "none", md: "flex" },
-									fontFamily: "monospace",
-									fontWeight: 700,
-									letterSpacing: ".3rem",
-									color: "#32a6db",
-									textDecoration: "none",
-								}}
-							>
-								Logo
-							</Typography>
-						</Link>
+						<AdbIcon
+							sx={{
+								display: { xs: "none", md: "flex" },
+								mr: 1,
+								color: "#32a6db",
+							}}
+						/>
+						<Typography
+							variant='h6'
+							noWrap
+							component='a'
+							href='#app-bar-with-responsive-menu'
+							sx={{
+								mr: 2,
+								display: { xs: "none", md: "flex" },
+								fontFamily: "monospace",
+								fontWeight: 700,
+								letterSpacing: ".3rem",
+								color: "#32a6db",
+								textDecoration: "none",
+							}}
+						>
+							Logo
+						</Typography>
 
 						<div className='flex justify-center items-center'>
 							{pages.map((page) => (

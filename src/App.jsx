@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import MainLayout from "./layout/MainLayout";
 import Home from "./pages/Home";
@@ -12,6 +12,8 @@ function App() {
 		<BrowserRouter>
 			<MainLayout>
 				<Routes>
+					<Route path='/' element={<Navigate to='/home' />} />
+
 					<Route path='/home' element={<Home />}></Route>
 					<Route path='/products' element={<Products />}></Route>
 					<Route path='/reviews' element={<Reviews />}></Route>

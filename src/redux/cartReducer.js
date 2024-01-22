@@ -14,8 +14,10 @@ const getInstanceCart = (cartList, size) => {
 
 const cartReducer = (state = initCart, action) => {
 	switch (action.type) {
-		case "GET_CART":
-			return getCartLocalstorage();
+		case "GET_CART": {
+			const cart = getCartLocalstorage();
+			return cart === null ? initCart : cart;
+		}
 		case "ADD_TO_CART":
 			if (state.size === 0) {
 				saveCartLocalstorage(
