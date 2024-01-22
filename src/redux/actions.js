@@ -14,6 +14,10 @@ export const selectedProductAction = (data) => {
 	return { type: "SELECT_PRODUCT", payload: data };
 };
 
+export const getCartAction = () => {
+	return { type: "GET_CART" };
+};
+
 export const addToCartAction = (data) => {
 	return { type: "ADD_TO_CART", payload: data };
 };

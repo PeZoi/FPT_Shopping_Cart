@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
-import { composeWithDevTools } from "redux-devtools-extension"; // Thêm dòng này
+import { composeWithDevTools } from "redux-devtools-extension";
 import productReducer from "./productReducer";
 import middleWare from "./middleWare";
 import cartReducer from "./cartReducer";
@@ -14,7 +14,7 @@ const allReducer = combineReducers({
 
 const store = createStore(
 	allReducer,
-	composeWithDevTools(applyMiddleware(sagaMiddleware)) // Thay đổi dòng này
+	composeWithDevTools(applyMiddleware(sagaMiddleware))
 );
 
 sagaMiddleware.run(middleWare);

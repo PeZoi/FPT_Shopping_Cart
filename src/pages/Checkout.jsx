@@ -31,8 +31,8 @@ export default function Checkout() {
 
 	return (
 		<div className='container w-9/12 h-screen m-auto mt-4 mb-10'>
-			<div className='bg-white rounded-lg py-3 font-bold text-center'>
-				My Shopping Cart
+			<div className='bg-white rounded-lg py-3 font-bold text-center shadow-lg'>
+				{"My Shopping Cart".toUpperCase()}
 			</div>
 			<div className='grid grid-cols-3 gap-4 mt-4'>
 				{/* List item products checkout */}
@@ -43,7 +43,7 @@ export default function Checkout() {
 				</div>
 				{/* Order info */}
 				<div>
-					<div className='bg-white rounded-lg p-5 h-fit'>
+					<div className='bg-white rounded-lg p-5 h-fit shadow-lg'>
 						<h1 className='font-bold uppercase text-center'>
 							Order info
 						</h1>
@@ -64,7 +64,7 @@ export default function Checkout() {
 
 						<div className='flex items-center justify-between font-bold text-2xl'>
 							<span>Total: </span>
-							<span>${totalPrice * 1 + 10}</span>
+							<span>${(totalPrice * 1 + 10).toFixed(2)}</span>
 						</div>
 					</div>
 					<div className='grid gap-4 mt-4'>

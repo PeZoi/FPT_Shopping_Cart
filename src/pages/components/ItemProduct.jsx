@@ -10,7 +10,7 @@ export default function ItemProduct({ product }) {
 	};
 
 	return (
-		<div className='w-full bg-white rounded-md p-5 flex items-center justify-center'>
+		<div className='w-full bg-white rounded-md p-5 flex items-center justify-center shadow-lg'>
 			<img
 				src={product.imageUrl}
 				alt=''
@@ -23,8 +23,8 @@ export default function ItemProduct({ product }) {
 				</h4>
 				<p className='text-gray-400'>{product.description}</p>
 
-				<div className='flex justify-between items-center mt-3'>
-					<span className='text-black font-bold text-xl'>
+				<div className='flex justify-between items-center mt-10'>
+					<span className='text-primary bg-bgPrimary font-bold text-xl p-1 px-3 rounded-lg'>
 						${product.price}
 					</span>
 					<span

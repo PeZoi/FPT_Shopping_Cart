@@ -25,7 +25,7 @@ export default function QuantityInput({
 				id='quantity-input'
 				data-input-counter
 				aria-describedby='helper-text-explanation'
-				className='h-6 text-center text-black font-bold text-sm block w-full py-2.5  '
+				className='h-6 text-center text-black font-bold text-sm block w-full py-2.5'
 				value={quantity}
 				onChange={() => {}}
 				max={99}

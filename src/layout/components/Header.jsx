@@ -6,12 +6,20 @@ import AdbIcon from "@mui/icons-material/Adb";
 import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link, NavLink } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getCartAction } from "../../redux/actions";
 
 const pages = ["home", "products", "reviews"];
 
 function Header() {
+	const dispatch = useDispatch();
 	const { size } = useSelector((state) => state.cartData);
+
+	useEffect(() => {
+		dispatch(getCartAction());
+	}, [dispatch]);
+
 	return (
 		<AppBar
 			position='static'
@@ -21,30 +29,32 @@ function Header() {
 			<Container maxWidth='xl'>
 				<div className='flex items-center justify-between'>
 					<div className='flex justify-center items-center'>
-						<AdbIcon
-							sx={{
-								display: { xs: "none", md: "flex" },
-								mr: 1,
-								color: "black",
-							}}
-						/>
-						<Typography
-							variant='h6'
-							noWrap
-							component='a'
-							href='#app-bar-with-responsive-menu'
-							sx={{
-								mr: 2,
-								display: { xs: "none", md: "flex" },
-								fontFamily: "monospace",
-								fontWeight: 700,
-								letterSpacing: ".3rem",
-								color: "black",
-								textDecoration: "none",
-							}}
-						>
-							Logo
-						</Typography>
+						<Link to={"/"} className='flex justify-center items-center'>
+							<AdbIcon
+								sx={{
+									display: { xs: "none", md: "flex" },
+									mr: 1,
+									color: "#32a6db",
+								}}
+							/>
+							<Typography
+								variant='h6'
+								noWrap
+								component='a'
+								href='#app-bar-with-responsive-menu'
+								sx={{
+									mr: 2,
+									display: { xs: "none", md: "flex" },
+									fontFamily: "monospace",
+									fontWeight: 700,
+									letterSpacing: ".3rem",
+									color: "#32a6db",
+									textDecoration: "none",
+								}}
+							>
+								Logo
+							</Typography>
+						</Link>
 
 						<div className='flex justify-center items-center'>
 							{pages.map((page) => (

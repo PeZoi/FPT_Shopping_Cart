@@ -41,7 +41,7 @@ export default function ItemProductsCheckout({ item }) {
 	};
 
 	return (
-		<div className='w-full bg-white rounded-md p-5 flex items-center justify-center'>
+		<div className='w-full bg-white rounded-md p-5 flex items-center justify-center shadow-lg'>
 			<img
 				src={item.product.imageUrl}
 				alt=''
@@ -60,7 +60,7 @@ export default function ItemProductsCheckout({ item }) {
 						handleDecreaseQuantity={handleDecreaseQuantity}
 					></QuantityInput>
 					<div className='flex justify-center items-center'>
-						<span className='text-black font-bold text-xl mr-10'>
+						<span className='text-primary bg-bgPrimary text-xl mr-10 font-bold p-1 px-3 rounded-lg'>
 							${item.product.price}
 						</span>
 						<span
