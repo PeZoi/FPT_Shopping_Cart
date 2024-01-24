@@ -9,6 +9,7 @@ import { getAllProductsAction } from "../redux/actions";
 export default function Products() {
 	const dispatch = useDispatch();
 	const { statusProductsList } = useSelector((state) => state.productData);
+
 	useEffect(() => {
 		dispatch(getAllProductsAction());
 	}, [dispatch]);

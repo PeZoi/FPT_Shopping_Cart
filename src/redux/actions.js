@@ -29,3 +29,7 @@ export const changeQuantityAction = (data) => {
 export const removeToCartAction = (data) => {
 	return { type: "REMOVE_TO_CART", payload: data };
 };
+
+export const checkoutAction = () => {
+	return { type: "CHECKOUT_CART" };
+};

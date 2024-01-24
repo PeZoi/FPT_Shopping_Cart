@@ -2,10 +2,13 @@
 import { Link } from "react-router-dom";
 import ItemProductsCheckout from "./components/ItemProductsCheckout";
 import Button from "@mui/material/Button";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import { checkoutAction } from "../redux/actions";
+import toast from "react-hot-toast";
 
 export default function Checkout() {
+	const dispatch = useDispatch();
 	const { cartList } = useSelector((state) => state.cartData);
 
 	const [totalPrice, setTotalPrice] = useState(0);
@@ -16,6 +19,21 @@ export default function Checkout() {
 		}, 0);
 		setTotalPrice(totalPrice.toFixed(2));
 	}, [cartList]);
+
+	const handleCheckout = () => {
+		toast.promise(
+			new Promise((resolve) => {
+				setTimeout(() => {
+					dispatch(checkoutAction());
+					resolve(200);
+				}, 2000);
+			}),
+			{
+				loading: "Processing...",
+				success: "Successful payment",
+			}
+		);
+	};
 
 	if (cartList.length === 0) {
 		return (
@@ -68,7 +86,11 @@ export default function Checkout() {
 						</div>
 					</div>
 					<div className='grid gap-4 mt-4'>
-						<Button variant='contained' className='w-full'>
+						<Button
+							variant='contained'
+							className='w-full'
+							onClick={handleCheckout}
+						>
 							Checkout
 						</Button>
 						<Link to={"/products"}>
